@@ -53,12 +53,10 @@ class YoutubeBot(object):
             try:
                 for update in updates:
                     if update.update_id > self.last_update_id:
-                        pprint.pprint(update)
                         self.last_update_id = update.update_id
                         self.process_message(update)
             except Exception as ex:
-                tb = traceback.format_exc()
-                pprint.pprint(tb)
+                print traceback.format_exc()
 
 
 if __name__ == '__main__':
